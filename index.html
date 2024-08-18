@@ -1,21 +1,61 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-    <p>hi</p>
-    
-    
-    <script src="" async defer></script>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin0_ | bio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cf16def632.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+    <div class="overlay" id="welcome-overlay">
+        <div class="overlay-content">
+            <p>Hello there</p>
+            <button id="continue-button">OK</button>
+        </div>
+    </div>
+	
+	<div class="top-left">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="button">??</a>
+    </div>
+
+    <div class="main-content blur">
+        <div class="top-right">
+            <a href="https://boyratata.github.io/icon.github.io/" class="button">bio reborn</a>
+        </div>
+        <div class="margin-content">
+            <div class="box">
+                <img class="pfp" src="https://i.imgur.com/dd0SEFr.png" />
+                <h1 data-value="admin0_">admin0_</h1>
+                <p class="under-txt">i got no balls no dick and no bitches.</p>
+                <p id="discord-status"></p>
+                <div class="links">
+                   ></a>
+                    <a href="https://github.com/TTF-fo class="grey-link"><i class="fa-brands fa-github"></i></a>
+                    
+                 <a href="https://discord.com/users/757444714969432095" class="grey-link"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="inf"></div>
+        <audio id="audio" src="" loop></audio>
+    </div>
+
+    <script type="module" src="./js/fetch.js"></script>
+    <script src="./js/text.js"></script>
+    <script>
+        document.getElementById('continue-button').onclick = function() {
+            document.getElementById('welcome-overlay').style.display = 'none';
+            var audio = new Audio('');
+            audio.loop = true;
+            audio.play().catch(function(error) {
+                console.error('Failed to play audio:', error);
+            });
+
+            document.querySelector('.main-content').classList.remove('blur');
+        };
+    </script>
+</body>
 </html>
