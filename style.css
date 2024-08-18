@@ -1,0 +1,130 @@
+body {
+    background: hsl(0, 0, 20);
+    font-family: sans-serif;
+    font-weight: 400;
+    -webkit-perspective: 800px;
+    perspective: 800px;
+    background-color: black;
+    
+  }
+  
+  h1, h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: hsl(0, 0, 20);
+    font-family: sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  h1 {
+    top: 24px;
+    font-size: 12px;
+  }
+  
+  h2 {
+    top: 44px;
+    font-size: 10px;
+    opacity: 0.7;
+  }
+  
+  .cube {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .cube span {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  #top {
+    background: hsl(45, 100%, 50%);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+   
+    max-height:50%;
+  }
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: large;
+    backdrop-filter: blur(20px);
+  }
+  .tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  }
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  #top span {
+    background: hsl(45, 100%, 45%);
+    color: hsl(45, 100%, 20%);
+    
+  }
+  
+  #content {
+    background: hsl(0, 0, 100%);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+   
+    
+   
+  }
+.tab-image{
+  height: 50px;
+  width: 50px;
+}
+  
+  #content span {
+    background: hsl(0, 0, 95%);
+    color: hsl(0, 0, 50%);
+    
+  }
+  
