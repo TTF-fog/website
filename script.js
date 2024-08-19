@@ -22,7 +22,7 @@ function displayLocalTime() {
     const localTime = now.toLocaleTimeString();
     const timeperiod  =  localTime.substring(localTime.length-2,localTime.length);
    
-    
+   
     if (timeperiod == "pm") {
     
     document.getElementById('top').style.backgroundImage =  "url('best-minecraft-shaders-solas-aurora.jpg')";
@@ -35,7 +35,7 @@ function displayLocalTime() {
   
 displayLocalTime()
 function cityName(evt, cityName) {
-  // Declare all variables
+  // Declare all variables 
   var i, tabcontent, tablinks;
 
   // Get all elements with class="tabcontent" and hide them
@@ -54,3 +54,58 @@ function cityName(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 } 
+function scroll(word) {
+  var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+  var currentword = [];
+
+  for (var i = 0; i < word.length; i++) {
+    (function(i) {
+      setTimeout(function() {
+        var j = 0; 
+        var intervalId = setInterval(function() {
+          currentword[i] = alphabet[j];
+          console.log(currentword);
+          document.getElementById("scroller").innerHTML = currentword.join("");
+          if (currentword[i] == word[i]) {
+            console.log("niceee");
+            
+            clearInterval(intervalId);
+          }
+          j++;
+          if (j >= alphabet.length) {
+            clearInterval(intervalId);
+          }
+        }, 50); 
+      }, i * 100); 
+    })(i);
+  }
+}
+scroll("hello");
+async function getData() {
+  const url = "https://api.lanyard.rest/v1/users/757444714969432095";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    console.log("getting data")
+    const json = await response.json();
+
+   return json
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+setTimeout(getData,1000 );
+// function fillActivity(){
+//   activity=getData()
+//   var onlinestatus = (activity["data"]["discord_status"]);
+//   if (onlinestatus == "offline"){
+//     document.getElementById("offline").style.backgroundColor = "red";
+//     document.getElementById("offline").innerHTML = "offline";
+//   }else{
+//     document.getElementById("offline").style.backgroundColor = "green";
+//     document.getElementById("offline").innerHTML = "Online";
+//   }
+//   if 
+// }
