@@ -72,10 +72,15 @@ body {
     padding-top: -100px;
     background-color: green;
     font-size: large;
+    color:white;
+    font-family: "Oswald";
+    box-sizing: border-box;
+    
     
   }
   .h1center, .h2center {
     position: absolute;
+    white-space: nowrap;
     left: 50%;
     transform: translateX(-50%);
     color: hsl(0, 0, 20);
@@ -341,7 +346,8 @@ body {
     top:1cm;
     animation: progress1 2s ease forwards;
   }
-
+ 
+ 
   @keyframes progress1 {
     from {
       stroke-dashoffset: 283;

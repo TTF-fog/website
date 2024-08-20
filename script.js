@@ -64,10 +64,10 @@ function scroll(word) {
         var j = 0; 
         var intervalId = setInterval(function() {
           currentword[i] = alphabet[j];
-          console.log(currentword);
+         
           document.getElementById("scroller").innerHTML = currentword.join("");
           if (currentword[i] == word[i]) {
-            console.log("niceee");
+            
             
             clearInterval(intervalId);
           }
@@ -91,21 +91,32 @@ async function getData() {
     console.log("getting data")
     const json = await response.json();
 
-   return json
+    var onlinestatus = (json["data"]["discord_status"]);
+ console.log("hello?");
+  if (onlinestatus == "offline"){
+    document.getElementById("offline").style.backgroundColor = "red";
+    document.getElementById("offline").innerHTML = "Offline";
+  }else{
+    document.getElementById("offline").style.backgroundColor = "green";
+   document.getElementById("offline").innerHTML = "Online";
+  }
+ 
   } catch (error) {
     console.error(error.message);
   }
 }
-setTimeout(getData,1000 );
-// function fillActivity(){
-//   activity=getData()
-//   var onlinestatus = (activity["data"]["discord_status"]);
-//   if (onlinestatus == "offline"){
-//     document.getElementById("offline").style.backgroundColor = "red";
-//     document.getElementById("offline").innerHTML = "offline";
-//   }else{
-//     document.getElementById("offline").style.backgroundColor = "green";
-//     document.getElementById("offline").innerHTML = "Online";
-//   }
-//   if 
-// }
+getData();
+
+
+const progressBar = document.getElementById('progress-bar1');
+
+const observer = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    progressBar.classList.add('animate');
+    observer.unobserve(progressBar); // Stop observing the element
+  }
+}, {
+  threshold: 1.0,
+});
+
+observer.observe(progressBar);
